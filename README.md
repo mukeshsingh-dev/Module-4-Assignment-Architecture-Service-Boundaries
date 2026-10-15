@@ -1,4 +1,4 @@
-# Distributed Online Store Services
+# Module 4 Assignment Architecture and Service Boundaries
 
 This project demonstrates a small distributed online store organized around clear service boundaries and data ownership. The executable implementation contains independent Order and Inventory processes communicating through HTTP, while the architecture also shows how a Notification Service can react to an `OrderCreated` event.
 
