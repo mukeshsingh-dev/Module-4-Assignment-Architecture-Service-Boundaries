@@ -43,6 +43,13 @@ These boundaries follow business capabilities. Order does not read or modify Inv
 .
 ├── README.md
 ├── demo.py
+├── evidence
+│   ├── 01-inventory-service-running.png
+│   ├── 02-order-service-running.png
+│   ├── 03-successful-order.png
+│   ├── 04-unavailable-inventory.png
+│   ├── 05-inventory-service-failure.png
+│   └── 06-order-health-after-failure.png
 ├── inventory_service.py
 ├── order_service.py
 └── requirements.txt
@@ -167,6 +174,34 @@ Order Service after dependency failure: HTTP 200
 ```
 
 This demonstrates that a valid order succeeds, insufficient inventory is rejected, Inventory unavailability produces an appropriate dependency error, and Order remains healthy afterward.
+
+## Screenshot evidence
+
+The following screenshots were captured from the locally running independent processes and client commands.
+
+### Inventory Service running
+
+![Inventory Service running on port 5001](evidence/01-inventory-service-running.png)
+
+### Order Service running
+
+![Order Service running on port 5000](evidence/02-order-service-running.png)
+
+### Successful order
+
+![Successful order returns HTTP 201](evidence/03-successful-order.png)
+
+### Unavailable inventory
+
+![Unavailable inventory returns HTTP 409](evidence/04-unavailable-inventory.png)
+
+### Inventory Service stopped
+
+![Stopped Inventory Service produces HTTP 503](evidence/05-inventory-service-failure.png)
+
+### Order Service remains running
+
+![Order health check returns HTTP 200 after dependency failure](evidence/06-order-health-after-failure.png)
 
 ## Reflection
 
